@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRoute from './routes/user.route.js';
 
 dotenv.config();
 
@@ -20,6 +21,4 @@ app.listen(process.env.PORT,(req,res)=>{
 
 // mongodb+srv://durgadasdhoke:<password>@cluster0.odc8qqo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-// app.get('/',(req,res)=>{
-//     res.json("Hello welcome");
-// })
+app.use('/api/user',userRoute);
