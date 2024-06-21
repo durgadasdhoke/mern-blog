@@ -18,7 +18,7 @@ const Header = () => {
   const path = useLocation().pathname;
 
   return (
-    
+    <>
     <Navbar className="flex justify-around h-12 items-center border-b-2 ">
       <Link
         to="/"
@@ -62,9 +62,15 @@ const Header = () => {
         <Navbar.Link active={path === "/about"} as={"div"}>
           <Link to="/about">About</Link>
         </Navbar.Link>
+        <Navbar.Link active={path === "/signup"} as={"div"}>
+          <Link to="/signup">Sign Up</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/signin"} as={"div"}>
+          <Link to="/signin">Sign In</Link>
+        </Navbar.Link>
       </NavbarCollapse>
     </Navbar>
-      
+    </>
   );
 };
 
